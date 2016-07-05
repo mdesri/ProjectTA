@@ -40,7 +40,7 @@ app.post(notifyPath, function (req, res) {
     console.log('[' + count + ']');
     var jsonSubs = parseB64Json(req.body.notify.representation.$t)
     var contentInstanceList = jsonSubs.contentInstanceCollection.contentInstance;
-    console.log('list: ' + contentInstanceList);
+    console.log('list: ' + JSON.stringify(contentInstanceList));
     var indexlenList = contentInstanceList.length - 1;
     var obj = (parseB64Json(contentInstanceList[indexlenList].content.$t));
     var timestamp = getDateTime();
